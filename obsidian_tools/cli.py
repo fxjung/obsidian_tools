@@ -1,23 +1,16 @@
-from pathlib import Path
-
 import typer
 import logging
 import asyncio
-import pyperclip
-import platform
-import googleapiclient.discovery
 import re
-import functools as ft
-import urllib.parse as urlparse
-import warnings
+import googleapiclient.discovery
 
-from urllib import parse as urlparse
+import functools as ft
 
 from pathlib import Path
-from linkfix.handle_urls import handle_url
+from minotaur import Inotify, Mask
+from urllib import parse as urlparse
 
 from obsidian_tools.config import api_key
-from minotaur import Inotify, Mask
 
 formatter = logging.Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s")
 
