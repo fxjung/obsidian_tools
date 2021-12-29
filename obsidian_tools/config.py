@@ -6,11 +6,11 @@ if (
         service_name="obsidian_tools_google_api_key", username=""
     )
 ) is None:
-    print("Enter Google API Key below:")
-    api_key = getpass("API Key: ")
+    print("Enter Google API key below:")
+    api_key = getpass("API key: ")
     keyring.set_password(
         service_name="obsidian_tools_google_api_key",
         username="",
         password=api_key,
     )
-    print("Password successfully saved to the system keyring.")
+    print("API key successfully saved to the system keyring.")
