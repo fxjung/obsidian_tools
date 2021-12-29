@@ -88,6 +88,7 @@ async def main(target: Path):
 
 app = typer.Typer()
 
+
 @app.command()
 def watch(
     target: Path = typer.Argument(
@@ -102,8 +103,9 @@ def watch(
 ):
     asyncio.run(main(target))
 
+
 @app.callback(invoke_without_command=True)
-def main_cli(ctx: typer.Context, debug:bool=typer.Option(False)):
+def main_cli(ctx: typer.Context, debug: bool = typer.Option(False)):
     if debug:
         logging.getLogger("").setLevel(logging.DEBUG)
 
