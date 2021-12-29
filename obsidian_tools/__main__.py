@@ -1,4 +1,4 @@
 import typer
-from linkfix import cli
+from obsidian_tools import cli
 
 typer.run(cli)
