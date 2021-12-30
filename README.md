@@ -22,7 +22,7 @@ pytest
 ```
 
 ## Usage
-- Watch a file containing YouTube URLs and replace with proper links on change and logging detailed info to the console:
+- Watch a file containing YouTube URLs and replace with proper links on change, logging detailed info to the console:
   ```bash
   obsidian-tools --debug watch ~/obsidian/vault/YouTube.md
   ```
