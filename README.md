@@ -11,6 +11,7 @@ Collection of helpers for [Obsidian](https://obsidian.md/).
 ## Prerequisites
 - Linux (due to inotify)
 - Python 3.10
+- git
 - `pip`
 
 ## Installation
