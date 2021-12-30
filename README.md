@@ -26,3 +26,6 @@ pytest
   ```bash
   obsidian-tools --debug watch ~/obsidian/vault/YouTube.md
   ```
+  
+## Contributing
+Feel free to file an issue, a pull request or ask a question :)
