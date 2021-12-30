@@ -1,4 +1,5 @@
 black
+pytest
 pre-commit
 typer
 minotaur

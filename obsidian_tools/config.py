@@ -1,5 +1,9 @@
+import logging
 import keyring
 from getpass import getpass
+
+log = logging.getLogger(__name__)
+
 
 if (
     api_key := keyring.get_password(
