@@ -30,11 +30,8 @@ def handle_match(match, short=False):
             )
         else:
             vid = urlparse.parse_qs(urlparse.urlparse(url).query)["v"][0].strip()
-        request = youtube.videos().list(
-            part="snippet,contentDetails,statistics", id=vid
-        )
+        request = youtube.videos().list(part="snippet", id=vid)
         response = request.execute()
-        # print(response)
 
         assert len(response["items"]) == 1
         video_title = response["items"][0]["snippet"]["title"]
