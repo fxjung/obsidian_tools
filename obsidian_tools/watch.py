@@ -25,9 +25,7 @@ def handle_match(match, short=False):
         url = match[0]
 
         if short:
-            vid = (
-                urlparse.urlparse(urlparse.urlparse(url).query).path.lstrip("/").strip()
-            )
+            vid = urlparse.urlparse(url).path.lstrip("/").strip()
         else:
             vid = urlparse.parse_qs(urlparse.urlparse(url).query)["v"][0].strip()
         request = youtube.videos().list(part="snippet", id=vid)
@@ -45,13 +43,13 @@ def handle_match(match, short=False):
 
 def replace_youtube_links(text):
     text = re.sub(
-        r"(?![^(]*\))(((https|http)://)?(www\.)?youtube\.[a-z]+/[^ \n]+)",
+        r"(?![^(]*\))(((https|http)://)?(www\.)?youtube\.[a-z]+/[^ .,:!\n]+)",
         handle_match,
         text,
     )
 
     text = re.sub(
-        r"(?![^(]*\))(((https|http)://)?(www\.)?youtu.be/[^ \n]+)",
+        r"(?![^(]*\))(((https|http)://)?(www\.)?youtu.be/[^ .,:!\n]+)",
         ft.partial(handle_match, short=True),
         text,
     )
